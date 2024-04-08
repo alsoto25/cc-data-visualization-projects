@@ -1,0 +1,59 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg rect {
+  &:hover {
+    fill: #363 !important;
+    cursor: pointer;
+  }
+  &:nth-child(3n) {
+    fill: #6a6;
+  }
+  &:nth-child(3n+1) {
+    fill: #6c6;
+  }
+  &:nth-child(3n+2) {
+    fill: #6d6;
+  }
+}
+
+.tick line {
+  opacity: 0.2;
+}
+
+#tooltip {
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: none;
+  transform: translate(-50%, calc(-100% - 10px));
+
+  &.active {
+    display: block;
+  }
+}
