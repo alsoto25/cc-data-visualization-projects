@@ -64,8 +64,6 @@ function createTooltipContent({
 
 // Prepare data
 function formatData(dataset: CyclistData[]) {
-  console.log(dataset);
-
   // Create X Scale
   const xMin = d3.min(dataset, (d: CyclistData) => d.Year);
   const xMax = d3.max(dataset, (d: CyclistData) => d.Year);
@@ -75,10 +73,6 @@ function formatData(dataset: CyclistData[]) {
   const yMin = d3.min(dataset, (d: CyclistData) => d.Seconds);
   const yMax = d3.max(dataset, (d: CyclistData) => d.Seconds);
   const yScale = d3.scaleLinear([yMin - 10, yMax + 10], [0, HEIGHT]);
-
-  // Create Color Scales
-  const xColorScale = d3.scaleLinear([xMin, xMax], [50, 200]);
-  const yColorScale = d3.scaleLinear([yMin, yMax], [50, 200]);
 
   // Format Data
   const formattedData = dataset.map((d) => ({
